@@ -18,7 +18,6 @@ public class TestController {
     @RequestMapping("/queryAll")
     public List<SysUser> queryAll(HttpServletRequest req){
         List<SysUser> list = sysUserService.queryAll();
-        System.out.println(req.getSession().getId());
         return list;
     }
 

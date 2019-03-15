@@ -2,6 +2,7 @@ package com.hr.service;
 
 import com.hr.entity.SysUser;
 import com.hr.mapper.SysUserMapper;
+import com.hr.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -14,6 +15,9 @@ public class SysUserService {
 
     @Autowired
     private SysUserMapper sysUserMapper;
+
+    @Autowired
+    RedisUtil redisUtil;
 
     @Cacheable("queryAll")
     public List<SysUser> queryAll(){
